@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55c800a294fb5b4989f952ea9f82aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedUnit: {fileID: 0}
+  _selectedUnit: {fileID: 834367894}
   _unitLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -453,6 +453,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834367894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 801763474688359, guid: cd161375bd63cb847b7736730c401280,
+    type: 3}
+  m_PrefabInstance: {fileID: 801764211501075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15d5bafe3dc0e247a86cf8849037f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1436335080
 GameObject:
   m_ObjectHideFlags: 0
