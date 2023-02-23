@@ -11,12 +11,12 @@ public class GridDebugObject : MonoBehaviour
         this.gridObject = gridObject;
         SetTextObject();
     }
-    private void SetTextObject()
+    public  void SetTextObject()
     {
         textMeshPro.text = gridObject.ToString();
     }
-    //private void Update()
-    //{
-    //    textMeshPro.text = gridObject.ToString();
-    //}
+    private void Update()
+    {
+        SetTextObject();
+    }
 }

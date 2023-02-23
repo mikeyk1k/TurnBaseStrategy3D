@@ -38,5 +38,11 @@ public class LevelGrid : MonoBehaviour
         GridObject gridObject = gridSystem.GetGridObject(gridPosition);
         gridObject.SetUnit(null);
     }
+    public void UnitMoveGridPosition(Unit unit, GridPosition fromGridPosition, GridPosition toGridPosition)
+    {
+        ClearUnitAtGridPosition(fromGridPosition);
+        SetUnitAtGridPosition(toGridPosition, unit);
+
+    }
     public GridPosition GetGridPosition(Vector3 worldPosition) => gridSystem.GetGridPosition(worldPosition);
 }
