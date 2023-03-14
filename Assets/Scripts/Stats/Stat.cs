@@ -17,29 +17,32 @@ namespace StatSystem
         public Stat(StatDefinition definition)
         {
             m_Definition = definition;
+            CalculateValue();
         }
         public void AddModifier(StatModifier modifier)
         {
             m_Modifiers.Add(modifier);
+            CalculateValue();
         }
         public void RemoveModifierFromSource(Object source)
         {
             m_Modifiers = m_Modifiers.Where(m => m.source.GetInstanceID() != source.GetInstanceID()).ToList();
+            CalculateValue();
         }
         protected void CalculateValue()
         {
-            int finalValue = baseValue; ;
+            int newValue = baseValue; ;
             m_Modifiers.Sort((x, y) => x.type.CompareTo(y.type));
             for (int i = 0; i < m_Modifiers.Count; i++)
             {
                 StatModifier modifier = m_Modifiers[i];
-                if (modifier.type == ModifierOperationType.Additive) finalValue += modifier.magnitude;
-                else if (modifier.type == ModifierOperationType.Multiplicative) finalValue *= modifier.magnitude;
+                if (modifier.type == ModifierOperationType.Additive) newValue += modifier.magnitude;
+                else if (modifier.type == ModifierOperationType.Multiplicative) newValue *= modifier.magnitude;
             }
-            if (m_Definition.cap >= 0) finalValue = Mathf.Min(finalValue, m_Definition.cap);
-            if (m_Value != finalValue)
+            if (m_Definition.cap >= 0) newValue = Mathf.Min(newValue, m_Definition.cap);
+            if (m_Value != newValue)
             {
-                m_Value = finalValue;
+                m_Value = newValue;
                 valueChanged?.Invoke();
             }
         }

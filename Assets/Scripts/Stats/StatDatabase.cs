@@ -7,5 +7,7 @@ namespace StatSystem
     public class StatDatabase : ScriptableObject
     {
         public List<StatDefinition> stats;
+        public List<StatDefinition> attributes;
+        public List<StatDefinition> primaryStats;
     }
 }
