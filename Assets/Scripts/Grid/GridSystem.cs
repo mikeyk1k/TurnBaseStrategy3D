@@ -50,6 +50,7 @@ public class GridSystem
                 GridDebugObject gridDebugObject = debugTransform.GetComponent<GridDebugObject>();
                 gridDebugObjectArray[x, z] = gridDebugObject;
                 gridDebugObject.SetGridObject(GetGridObject(gridPosition));
+                gridDebugObject.SetTextObject();
             }
         }
     }
